@@ -1,0 +1,19 @@
+.artist-name {
+    font-size: 1.25em;
+}
+
+.cartButton {
+    background-color: darkslategray;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 1em;
+  }
+
+  .nav {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.5em;
+  }
