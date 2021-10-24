@@ -7,10 +7,10 @@ const orderSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  products: [
+  albums: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Product'
+      ref: 'Album'
     }
   ]
 });
