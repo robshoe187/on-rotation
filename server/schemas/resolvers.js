@@ -21,7 +21,7 @@ const resolvers = {
             }
       
             throw new AuthenticationError('Not logged in');
-          }
+          },
         
     },
 
