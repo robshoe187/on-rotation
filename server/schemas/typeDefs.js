@@ -16,7 +16,7 @@ type Album {
     image: String
     price: Float
     quantity: Int
-    ratings: []
+    ratings: [Int]
 }
 
 type Order {
