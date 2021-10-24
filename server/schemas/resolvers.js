@@ -9,8 +9,8 @@ const resolvers = {
             return await Album.find();
         },
         album: async (parent, { _id }) => {
-            return await Album.findById(_id)
-        },
+             return await Album.findById(_id)
+         },
         user: async (parent, args, context) => {
             if (context.user) {
               const user = await User.findById(context.user._id)
@@ -21,7 +21,7 @@ const resolvers = {
             }
       
             throw new AuthenticationError('Not logged in');
-          },
+          }
         
     },
 

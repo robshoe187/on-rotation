@@ -35,7 +35,8 @@ type Checkout {
 }
 
 type Query {
-    albums(_id: ID!): [Album]
+    album(_id: ID!): Album
+    albums: [Album]
     user: User
     order(_id: ID!) : Order
     checkout(albums: [ID]!): Checkout
