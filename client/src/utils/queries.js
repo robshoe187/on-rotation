@@ -28,3 +28,24 @@ query album ($id: ID!) {
     }
   }
 `;
+
+export const QUERY_USER = gql`
+  {
+    user {
+      username
+      orders {
+        _id
+        purchaseDate
+        albums {
+          _id
+          title
+          artist
+          description
+          price
+          quantity
+          image
+        }
+      }
+    }
+  }
+`;
