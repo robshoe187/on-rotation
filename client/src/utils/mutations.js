@@ -29,3 +29,20 @@ export const LOGIN = gql`
     }
   }
 `;
+
+export const ADD_ORDER = gql`
+  mutation addOrder($albums: [ID]!) {
+    addOrder(albums: $albums) {
+      purchaseDate
+      albums {
+        _id
+        title
+        artist
+        image
+        price
+        quantity
+        
+      }
+    }
+  }
+`;
