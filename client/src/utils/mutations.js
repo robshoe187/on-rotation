@@ -38,10 +38,14 @@ export const ADD_ORDER = gql`
         _id
         title
         artist
-        image
+        description
         price
+        image
         quantity
-        
+        category {
+          name
+        }
+        ratings
       }
     }
   }

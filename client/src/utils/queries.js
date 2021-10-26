@@ -1,30 +1,54 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_ALBUMS = gql`
-query{
-    albums {
+  query getAlbums($category: ID) {
+    albums(category: $category) {
       _id
       title
       artist
       description
-      image
       price
       quantity
+      image
+      category {
+        _id
+      }
       ratings
     }
   }
 `;
 
-export const QUERY_ALBUM = gql`
-query album ($id: ID!) {
-    album(_id: $id) {
-      title
-      artist
-      description
-      image
-      price
-      quantity
-      ratings
+export const QUERY_CHECKOUT = gql`
+  query getCheckout($products: [ID]!) {
+    checkout(products: $products) {
+      session
+    }
+  }
+`;
+
+export const QUERY_ALL_ALBUMS = gql`
+{
+  albums {
+    _id
+    title
+    artist
+    description
+    image
+    price
+    quantity
+    category {
+      name
+    }
+    ratings
+  }
+}
+`;
+
+export const QUERY_CATEGORIES = gql`
+  {
+    categories {
+      _id
+      name
     }
   }
 `;
@@ -44,6 +68,10 @@ export const QUERY_USER = gql`
           price
           quantity
           image
+          category {
+            _id
+          }
+          ratings
         }
       }
     }
