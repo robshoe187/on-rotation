@@ -1,9 +1,17 @@
 const db = require('./connection');
-const { Album } = require('../models');
+const { Album, Category } = require('../models');
 
 db.once('open', async () => {
-await Album.deleteMany();
+await Category.deleteMany();
 
+const categories = await Category.insertMany([
+   { name: 'LP' },
+   { name: "CD"}
+]);
+
+console.log('categories seeded');
+
+await Album.deleteMany();
 
 const album = await Album.insertMany([
     {
@@ -17,6 +25,7 @@ const album = await Album.insertMany([
         image: 'Madvillainy.png',
         price: 40,
         quantity: 25,
+        category: categories[0]._id,
         rating: 0
 
      },
@@ -31,6 +40,7 @@ const album = await Album.insertMany([
         image: 'Californication.jpg',
         price: 40,
         quantity: 25,
+        category: categories[0]._id,
         rating: 0
 
      },
@@ -45,6 +55,7 @@ const album = await Album.insertMany([
         image: 'Saturdays_=_Youth.png',
         price: 40,
         quantity: 25,
+        category: categories[0]._id,
         rating: 0
 
      },
@@ -59,6 +70,7 @@ const album = await Album.insertMany([
         image: 'Sticky-Fingers.png',
         price: 40,
         quantity: 25,
+        category: categories[0]._id,
         rating: 0
 
      },
@@ -71,6 +83,7 @@ const album = await Album.insertMany([
         image: 'Stranger_Things_S1V1.png',
         price: 40,
         quantity: 25,
+        category: categories[0]._id,
         rating: 0
 
      },
@@ -85,6 +98,7 @@ const album = await Album.insertMany([
         image: 'Untrue.jpg',
         price: 40,
         quantity: 25,
+        category: categories[0]._id,
         rating: 0
 
      }

@@ -1,7 +1,9 @@
 import React from "react";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
-import ProductItem from "../components/ProductItem";
+import ProductList from "../components/ProductList";
+import CategoryMenu from "../components/CategoryMenu"
+import Cart from "../components/Cart";
 import Footer from "../components/Footer";
 
 const Home = () => {
@@ -11,11 +13,13 @@ const Home = () => {
       <Header></Header>
       <Nav></Nav>
     </div>
+    <CategoryMenu />
     <div className="container pt-5">
         <div className="row">
-          <ProductItem></ProductItem>
-        </div>
+          <ProductList />
+        </div> 
     </div> 
+    < Cart />
     <Footer></Footer>
     </> 
     )
