@@ -106,7 +106,7 @@ const Album = () => {
           </p>
 
           <img
-            src={`/images/${currentProduct.image}`}
+            src={`/album/${currentProduct.image}`}
             alt={currentProduct.name}
           />
         </div>
