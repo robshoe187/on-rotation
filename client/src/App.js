@@ -14,6 +14,8 @@ import Cart from "./pages/Cart";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Nomatch from "./pages/Nomatch"
+import Success from './pages/Success';
+import OrderHistory from "./pages/OrderHistory";
 
 
 const httpLink = createHttpLink({
@@ -45,6 +47,8 @@ const App = () => {
         <Route exact path="/album/:id" component={Album} />
         <Route exact path="/cart" component={Cart} />
         <Route exact path="/signup" component={Signup} />
+        <Route exact path="/success" component={Success} />
+        <Route exact path="/orderHistory" component={OrderHistory} />
         <Route exact path="/login" component={Login} />
         <Route component={Nomatch} />
       </Switch>

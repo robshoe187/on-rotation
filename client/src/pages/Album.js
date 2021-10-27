@@ -116,6 +116,6 @@ const Album = () => {
       <Footer />
     </>
   );
-}
+  }
 
 export default Album;
