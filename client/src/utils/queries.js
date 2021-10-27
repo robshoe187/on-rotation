@@ -78,10 +78,10 @@ export const QUERY_USER = gql`
   }
 `;
 
-export const QUERY_CHECKOUT = gql`
-  query getCheckout($albums: [ID]!) {
-    checkout(albums: $albums) {
-      session
-    }
-  }
-`;
+// export const QUERY_CHECKOUT = gql`
+//   query getCheckout($albums: [ID]!) {
+//     checkout(albums: $albums) {
+//       session
+//     }
+//   }
+// `;

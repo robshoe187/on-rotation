@@ -42,7 +42,7 @@ const App = () => {
       <StoreProvider>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/album:id" component={Album} />
+        <Route exact path="/album/:id" component={Album} />
         <Route exact path="/cart" component={Cart} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/login" component={Login} />
