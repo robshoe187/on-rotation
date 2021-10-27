@@ -19,7 +19,7 @@ function OrderHistory() {
         <Header />
         <Nav />
           <div className="container my-1">
-            <Link to="/">← Back to Albums</Link>
+          <Link className="btn btn-light" to="/">← Back to Albums</Link>
     
             {user ? (
               <>

@@ -10,10 +10,19 @@ body {
   width: 70%;
   margin: 0 auto;
 }
+.loginForm {
+  width: 70%;
+  margin: 0 auto;
+}
 .col-md-6 {
   margin: 0 auto;
 }
 .signUpButton {
+  padding-top: 3em;
+  margin: 0 auto;
+  text-align: center;
+}
+.loginButton {
   padding-top: 3em;
   margin: 0 auto;
   text-align: center;
