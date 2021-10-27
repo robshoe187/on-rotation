@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import Header from "../components/Header";
+import Nav from '../components/Nav';
 import Footer from "../components/Footer";
 import Cart from '../components/Cart';
 import { useStoreContext } from '../utils/GlobalState';
@@ -86,16 +87,22 @@ const Album = () => {
   return (
     <>
     <Header />
+    <Nav />
+    <div className="container pt-5">
+    <div className="row">
       {currentProduct && cart ? (
-        <div className="container my-1">
-          <Link to="/">← Back to Products</Link>
-
-          <h2>{currentProduct.name}</h2>
-
-          <p>{currentProduct.description}</p>
-
-          <p>
-            <strong>Price:</strong>${currentProduct.price}{' '}
+        <>
+        <div className ="col">
+            <img src={`/album/${currentProduct.image}`}
+            alt={currentProduct.title}
+            key={currentProduct.id}
+            />
+        </div>
+        <div className="col">  
+            <h2>{currentProduct.artist}</h2>
+            <h3>{currentProduct.album}</h3>
+            <span className="price">$ {currentProduct.price}<button className="cartButton">Add to Cart</button></span>
+            <p className="pt-1">Rating: {currentProduct.ratings}/5</p>
             <button onClick={addToCart}>Add to Cart</button>
             <button
               disabled={!cart.find((p) => p._id === currentProduct._id)}
@@ -103,15 +110,13 @@ const Album = () => {
             >
               Remove from Cart
             </button>
-          </p>
-
-          <img
-            src={`/album/${currentProduct.image}`}
-            alt={currentProduct.name}
-          />
-        </div>
+            <p>{currentProduct.description}</p>
+        </div> 
+        </>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}
+      </div>
+      </div>
       <Cart />
       <Footer />
     </>

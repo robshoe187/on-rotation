@@ -48,7 +48,6 @@ const ProductItem = (item) => {
               alt={title}
               src={`/album/${image}`}
             />
-            <p>{title}</p>
           </Link>
           <ul className="list-group list-group-flush">
             <li className="list-group-item artist-name">{title}</li>
