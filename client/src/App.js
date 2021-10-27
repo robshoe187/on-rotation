@@ -10,7 +10,6 @@ import { setContext } from '@apollo/client/link/context';
 import {StoreProvider } from './utils/GlobalState'
 import Album from "./pages/Album";
 import Home from "./pages/Home";
-import Cart from "./pages/Cart";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Nomatch from "./pages/Nomatch"
@@ -45,7 +44,6 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/album/:id" component={Album} />
-        <Route exact path="/cart" component={Cart} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/success" component={Success} />
         <Route exact path="/orderHistory" component={OrderHistory} />
