@@ -6,7 +6,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.signupForm {
+  width: 70%;
+  margin: 0 auto;
+}
+.col-md-6 {
+  margin: 0 auto;
+}
+.signUpButton {
+  padding-top: 3em;
+  margin: 0 auto;
+  text-align: center;
+}
+/* .btn-light  {
+  margin-left: 20%;
+} */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
