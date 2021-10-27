@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Header from '../components/Header';
+import Nav from '../components/Nav';
 
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
+import Footer from '../components/Footer';
 
 function OrderHistory() {
     const { data } = useQuery(QUERY_USER);
@@ -13,6 +16,8 @@ function OrderHistory() {
     }
     return (
         <>
+        <Header />
+        <Nav />
           <div className="container my-1">
             <Link to="/">← Back to Albums</Link>
     
@@ -44,6 +49,7 @@ function OrderHistory() {
               </>
             ) : null}
           </div>
+          <Footer />
         </>
       );
     }
