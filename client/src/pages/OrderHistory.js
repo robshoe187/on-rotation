@@ -35,7 +35,7 @@ function OrderHistory() {
                       {order.albums.map(({ _id, image, name, price }, index) => (
                         <div key={index} className="card px-1 py-1">
                           <Link to={`/albums/${_id}`}>
-                            <img alt={name} src={`/albums/${image}`} />
+                            <img alt={name} src={`/album/${image}`} />
                             <p>{name}</p>
                           </Link>
                           <div>
