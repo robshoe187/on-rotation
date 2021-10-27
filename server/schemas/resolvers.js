@@ -55,27 +55,28 @@ const resolvers = {
             const order = new Order({ albums: args.albums });
             const line_items = [];
       
-            const { albums } = await order.populate('albums').execPopulate();
-      
+            const { albums } = await order.populate('albums')
+            console.log(albums)
             for (let i = 0; i < albums.length; i++) {
-              const album = await stripe.albums.create({
-                name: albums[i].name,
+              const album = await stripe.products.create({
+                name: albums[i].title,
                 description: albums[i].description,
                 images: [`${url}/images/${albums[i].image}`]
               });
-      
+              console.log('3')
               const price = await stripe.prices.create({
-                album: album.id,
+                product: album.id,
                 unit_amount: albums[i].price * 100,
                 currency: 'usd',
               });
-      
+              console.log('4')
               line_items.push({
                 price: price.id,
                 quantity: 1
               });
+              console.log('5')
             }
-      
+            console.log('2')
             const session = await stripe.checkout.sessions.create({
               payment_method_types: ['card'],
               line_items,
@@ -83,7 +84,7 @@ const resolvers = {
               success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
               cancel_url: `${url}/`
             });
-      
+            console.log('1')
             return { session: session.id };
           }
     },
