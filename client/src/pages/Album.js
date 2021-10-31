@@ -101,7 +101,7 @@ const Album = () => {
         <div className="col">  
             <h2>{currentProduct.artist}</h2>
             <h3>{currentProduct.album}</h3>
-            <span className="price">$ {currentProduct.price}<button className="cartButton">Add to Cart</button></span>
+            <span className="price">$ {currentProduct.price}</span>
             <p className="pt-1">Rating: {currentProduct.ratings}/5</p>
             <button onClick={addToCart}>Add to Cart</button>
             <button
